@@ -3,22 +3,24 @@
   "id": "team_capes",
   "version": "${version}",
 
-  "name": "TeamCapes",
-  "description": "",
-  "authors": [],
+  "name": "Team Capes",
+  "description": "Shows team colored capes, for players in teams.",
+  "authors": [
+    "Daedelus"
+  ],
   "contact": {},
 
   "license": "All Rights Reserved",
   "icon": "icon.png",
 
-  "environment": "*",
+  "environment": "client",
   "entrypoints": {},
   "mixins": [
     "team_capes.mixins.json",
     "team_capes-common.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.14.24",
+    "fabricloader": "*",
     "minecraft": ">=1.20.1"
   }
 }

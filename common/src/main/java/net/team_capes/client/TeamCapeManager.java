@@ -22,21 +22,15 @@ public class TeamCapeManager {
             try {
                 var image = grayScaleResource.loadImage(MinecraftClient.getInstance().getResourceManager());
                 var color = Color.from(colorDecimal);
+
                 var coloredImage = colorizeImage(image, color);
-
-
                 var texture = new NativeImageBackedTexture(coloredImage);
                 System.out.println("Registering texture: " + textureId + " | texture:" + texture);
                 textureManager().registerTexture(textureId, texture);
                 TEAM_CAPE_TEXTURES.put(colorDecimal, textureId);
-
             } catch (Exception e) {
                 throw new RuntimeException(e);
             }
-
-
-            // Colorize grayscale image
-
 
             return textureId;
         }
@@ -47,24 +41,25 @@ public class TeamCapeManager {
     }
 
     private static NativeImage colorizeImage(NativeImage grayScaleImage, Color color) {
+        // var pixels = grayScaleImage.copyPixelsRgba();
         var coloredImage = new NativeImage(grayScaleImage.getWidth(), grayScaleImage.getHeight(), true);
-
         for (int y = 0; y < grayScaleImage.getHeight(); y++) {
             for (int x = 0; x < grayScaleImage.getWidth(); x++) {
-                int alpha = grayScaleImage.getOpacity(x, y);
-                int red = (int) (grayScaleImage.getRed(x, y) * color.red());
-                int green = (int) (grayScaleImage.getGreen(x, y) * color.green());
-                int blue = (int) (grayScaleImage.getBlue(x, y) * color.blue());
+                var pixel = grayScaleImage.getColor(x, y);
+                // int pixel = pixels[x + (y * grayScaleImage.getWidth())];
+//                int originalRed = (pixel) & 0xFF;
+//                int originalGreen = (pixel >> 8) & 0xFF;
+//                int originalBlue = (pixel >> 16) & 0xFF;
 
-                System.out.println("Pixel: " + x + ", " + y + " | " + red + ", " + green + ", " + blue + ", " + alpha);
-
-                int newPixel = (red << 24) | (green << 16) | (blue << 8) | alpha;
+                // Format is ABGR
+                int alpha = (pixel >> 24) & 0xFF;
+                int blue = (int) (((pixel >> 16) & 0xFF) * color.blue());
+                int green = (int) (((pixel >> 8) & 0xFF) * color.green());
+                int red = (int) (((pixel) & 0xFF) * color.red());
+                int newPixel = (alpha << 24) | (blue << 16) | (green << 8) | red;
                 coloredImage.setColor(x, y, newPixel);
             }
         }
-
-
-
         return coloredImage;
     }
 

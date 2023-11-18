@@ -8,4 +8,8 @@ public record Color(float red, float green, float blue) {
         return new Color(red, green, blue);
     }
     public static final Color WHITE = new Color(1, 1, 1);
+
+    public Color inverted() {
+        return new Color(1 - red, 1 - green, 1 - blue);
+    }
 }
