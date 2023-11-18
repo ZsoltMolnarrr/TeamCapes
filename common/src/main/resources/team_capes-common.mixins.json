@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "net.team_capes.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "client.PlayerEntityModelMixin"
+  ],
+  "client": [
+    "client.AbstractClientPlayerEntityMixin",
+    "client.CapeFeatureRendererMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

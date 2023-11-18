@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "team_capes",
+  "version": "${version}",
+
+  "name": "TeamCapes",
+  "description": "",
+  "authors": [],
+  "contact": {},
+
+  "license": "All Rights Reserved",
+  "icon": "icon.png",
+
+  "environment": "*",
+  "entrypoints": {},
+  "mixins": [
+    "team_capes.mixins.json",
+    "team_capes-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14.24",
+    "minecraft": ">=1.20.1"
+  }
+}
