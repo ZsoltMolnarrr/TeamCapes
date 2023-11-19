@@ -29,7 +29,7 @@ public class TeamCapeManager {
                 textureManager().registerTexture(textureId, texture);
                 TEAM_CAPE_TEXTURES.put(colorDecimal, textureId);
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                System.err.println("Failed to load team cape texture: " + textureId + " | error" + e.getMessage());
             }
 
             return textureId;
