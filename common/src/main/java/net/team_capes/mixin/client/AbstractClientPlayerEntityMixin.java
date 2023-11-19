@@ -14,7 +14,8 @@ public class AbstractClientPlayerEntityMixin {
     @Inject(method = "getCapeTexture", at = @At("HEAD"), cancellable = true)
     private void getCapeTexture(CallbackInfoReturnable<Identifier> cir) {
         var player = (AbstractClientPlayerEntity) (Object) this;
-        if (player.getScoreboardTeam() != null) {
+        var team = player.getScoreboardTeam();
+        if (team != null && team.getColor().getColorValue() != null) {
             cir.setReturnValue(TeamCapeManager.getTeamCapeTexture(player.getTeamColorValue()));
             cir.cancel();
         }
