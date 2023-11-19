@@ -11,7 +11,7 @@ loaderVersion="[47,)" #mandatory This is typically bumped every Minecraft versio
 # Review your options at https://choosealicense.com/. All rights reserved is the default copyright stance, and is thus the default here.
 license="All Rights Reserved"
 # A URL to refer people to when problems occur with this mod
-issueTrackerURL="https://zsoltmolnar/TeamCapes/issues"
+issueTrackerURL="https://github.com/ZsoltMolnarrr/TeamCapes/issues"
 # A list of mods - how many allowed here is determined by the individual mod loader
 [[mods]] #mandatory
 # The modid of the mod
@@ -21,7 +21,7 @@ modId="team_capes" #mandatory
 # see the associated build.gradle script for how to populate this completely automatically during a build
 version="${version}" #mandatory
 # A display name for the mod
-displayName="TeamCapes" #mandatory
+displayName="Team Capes" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
 #updateJSONURL="http://myurl.me/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
@@ -42,20 +42,8 @@ logoFile="icon.png" #optional
 
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-
+Shows team colored capes, for players in teams.
 '''
-# A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
-[[dependencies.team_capes]] #optional
-   # the modid of the dependency
-   modId="forge" #mandatory
-   # Does this dependency have to exist - if not, ordering below must be specified
-   mandatory=true #mandatory
-   # The version range of the dependency
-   versionRange="[47,)" #mandatory
-   # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
-   ordering="NONE"
-   # Side this dependency is applied on - BOTH, CLIENT or SERVER
-   side="BOTH"
 # Here's another dependency
 [[dependencies.team_capes]]
    modId="minecraft"
@@ -63,4 +51,4 @@ description='''
    # This version range declares a minimum of the current minecraft version up to but not including the next major version
    versionRange="[1.20.1,1.21)"
    ordering="NONE"
-   side="BOTH"
+   side="CLIENT"
