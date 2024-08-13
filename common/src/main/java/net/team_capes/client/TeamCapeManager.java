@@ -14,14 +14,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class TeamCapeManager {
-    private static final Identifier GRAYSCALE = new Identifier(TeamCapesMod.NAMESPACE, "textures/team_cape.png");
+    private static final Identifier GRAYSCALE = Identifier.of(TeamCapesMod.NAMESPACE, "textures/team_cape.png");
     private static final Map<Integer, Identifier> TEAM_CAPE_TEXTURES = new HashMap<>();
     public static Identifier getTeamCapeTexture(int colorDecimal) {
         if (TEAM_CAPE_TEXTURES.containsKey(colorDecimal)) {
             return TEAM_CAPE_TEXTURES.get(colorDecimal);
         } else {
             var grayScaleResource = new AccessibleResourceTexture(GRAYSCALE);
-            var textureId = new Identifier(TeamCapesMod.NAMESPACE, "textures/team_cape_" + colorDecimal);
+            var textureId = Identifier.of(TeamCapesMod.NAMESPACE, "textures/team_cape_" + colorDecimal);
             try {
                 var image = grayScaleResource.loadImage(MinecraftClient.getInstance().getResourceManager());
                 var color = Color.from(colorDecimal);
