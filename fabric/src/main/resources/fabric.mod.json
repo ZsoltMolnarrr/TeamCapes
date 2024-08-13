@@ -2,25 +2,37 @@
   "schemaVersion": 1,
   "id": "team_capes",
   "version": "${version}",
-
   "name": "Team Capes",
   "description": "Shows team colored capes, for players in teams.",
   "authors": [
     "Daedelus"
   ],
-  "contact": {},
-
+  "contact": {
+  },
   "license": "All Rights Reserved",
-  "icon": "icon.png",
-
+  "icon": "assets/team_capes/icon.png",
   "environment": "client",
-  "entrypoints": {},
+  "entrypoints": {
+    "main": [
+      "net.team_capes.fabric.TeamCapesModFabric"
+    ],
+    "client": [
+    ]
+  },
   "mixins": [
-    "team_capes.mixins.json",
-    "team_capes-common.mixins.json"
+    "team_capes.mixins.json"
   ],
   "depends": {
-    "fabricloader": "*",
-    "minecraft": ">=1.18.0"
+    "fabricloader": ">=0.16.0",
+    "minecraft": "~1.20.4",
+    "java": ">=17",
+    "fabric-api": "*"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/KN9b3pjFTM"
+      }
+    }
   }
 }

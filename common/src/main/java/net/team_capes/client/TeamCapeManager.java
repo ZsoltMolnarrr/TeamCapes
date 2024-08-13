@@ -1,7 +1,10 @@
 package net.team_capes.client;
 
 import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.texture.*;
+import net.minecraft.client.texture.NativeImage;
+import net.minecraft.client.texture.NativeImageBackedTexture;
+import net.minecraft.client.texture.ResourceTexture;
+import net.minecraft.client.texture.TextureManager;
 import net.minecraft.resource.ResourceManager;
 import net.minecraft.util.Identifier;
 import net.team_capes.TeamCapesMod;

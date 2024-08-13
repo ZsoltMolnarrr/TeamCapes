@@ -1,11 +1,12 @@
 {
   "required": true,
-  "minVersion": "0.8",
-  "package": "net.team_capes.team_capes.mixin.forge",
+  "package": "net.team_capes.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
-  ],
+  "minVersion": "0.8",
   "client": [
+    "AbstractClientPlayerEntityMixin"
+  ],
+  "mixins": [
   ],
   "injectors": {
     "defaultRequire": 1

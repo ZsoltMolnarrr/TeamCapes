@@ -1,0 +1,32 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+#issueTrackerURL = ""
+license = "All Rights Reserved"
+
+[[mods]]
+modId = "team_capes"
+version = "${version}"
+displayName = "Team Capes"
+authors = "Daedelus"
+side="CLIENT"
+description = '''
+Shows team colored capes, for players in teams.
+'''
+logoFile = "icon.png"
+
+[[dependencies.team_capes]]
+modId = "neoforge"
+type = "required"
+versionRange = "[20.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.team_capes]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.20.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[mixins]]
+config = "team_capes.mixins.json"
