@@ -1,7 +1,7 @@
 plugins {
     id 'dev.architectury.loom' version '1.6-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
-    id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
+    id 'com.gradleup.shadow' version '8.3.6' apply false
 }
 
 architectury {
@@ -42,6 +42,11 @@ subprojects {
     }
 
     java {
+        // The JDK this compiles on. Without it, javac runs on whatever JVM launched Gradle.
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(21)
+        }
+
         // Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
         // if it is present.
         // If you remove this line, sources will not be generated.
