@@ -30,3 +30,6 @@ side = "BOTH"
 
 [[mixins]]
 config = "team_capes.mixins.json"
+
+[[mixins]]
+config = "team_capes.iris.mixins.json"

@@ -33,6 +33,10 @@ dependencies {
     // Fabric API. This is technically optional, but you probably want it anyway.
     modImplementation "net.fabricmc.fabric-api:fabric-api:$rootProject.fabric_api_version"
 
+    // Bundled (jar-in-jar), so Team Capes still installs without extra dependencies.
+    // Plain (non-mod) dependency: TinyConfig has no Minecraft references, so it needs no remapping.
+    include(implementation("maven.modrinth:tiny-config:${rootProject.tiny_config_version}-${platform}"))
+
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionFabric')
 }

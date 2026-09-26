@@ -1,0 +1,12 @@
+{
+  "required": false,
+  "package": "net.team_capes.mixin.iris",
+  "compatibilityLevel": "JAVA_17",
+  "minVersion": "0.8",
+  "client": [
+    "IrisVertexFormatsMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -7,4 +7,8 @@ dependencies {
     // which get remapped to the correct annotations on each platform.
     // Do NOT use other classes from Fabric Loader.
     modImplementation "net.fabricmc:fabric-loader:$rootProject.fabric_loader_version"
+    // Plain (non-mod) dependency: TinyConfig has no Minecraft references, so it needs no remapping.
+    compileOnly "maven.modrinth:tiny-config:$rootProject.tiny_config_version-fabric"
+    // Lets the mixin annotation processor resolve the Iris target class (not remapped, only looked up)
+    compileOnly "maven.modrinth:iris:$rootProject.iris_version-fabric"
 }
