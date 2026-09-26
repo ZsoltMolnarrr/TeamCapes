@@ -1,3 +1,7 @@
+# 1.1.2
+
+- Add opt-in iris fix
+
 # 1.1.1
 
 - Update to 1.21.0
